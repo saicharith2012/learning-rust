@@ -207,3 +207,63 @@ for val in vec {
 ![alt text](image-53.png)
 
 ![alt text](image-54.png)
+
+## Iterators
+
+![alt text](image-55.png)
+
+### Iterating using for loops
+
+![alt text](image-56.png)
+
+### Iterating after creating an iterator
+
+![alt text](image-57.png)
+
+> Iterator borrows the values with ```immutable references```, hence the original vector ```nums``` still owns these values.
+
+### iter_mut()
+
+```iter_mut()``` can be used to make ```mutable references``` to the original collection with the iterator.
+
+![alt text](image-58.png)
+
+### Iterating using .next
+
+![alt text](image-59.png)
+
+### into_iter()
+
+![alt text](image-60.png)
+
+![alt text](image-61.png)
+
+### Which Iterator to choose?
+
+![alt text](image-62.png)
+
+Iterating directly on the collection with a for loop is same as using ```into_iter```, hence ownership is tranferred in both the cases.
+
+![alt text](image-63.png)
+
+### Types of Iterators
+
+#### Consuming Adapters
+
+![alt text](image-64.png)
+
+#### Iterator Adapters
+
+![alt text](image-65.png)
+
+- Map
+
+![alt text](image-66.png)
+
+- Filter
+
+![alt text](image-67.png)
+
+![alt text](image-68.png)
+
+![alt text](image-69.png)
