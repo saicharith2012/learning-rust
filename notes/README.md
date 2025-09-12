@@ -177,3 +177,27 @@ hence, to prevent this ugly way of returning values to avoid ownership invalidat
 ![alt text](image-48.png)
 
 ![alt text](image-49.png)
+
+## Collections
+
+![alt text](image-50.png)
+
+## Vectors
+
+![alt text](image-51.png)
+
+### Iterating through a vector using for loop
+
+```rust
+for val in vec {
+    if val % 2 == 0 {
+
+    }
+}
+```
+
+### Initialising Vectors using macros
+
+![alt text](image-52.png)
+
+### Defining the type of the vector as generic
