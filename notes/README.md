@@ -91,3 +91,89 @@ The ```variables whose size could be changed``` during runtime are stored in the
 ![alt text](image-29.png)
 
 ![alt text](image-28.png)
+
+## Ways of memory management in different languages
+
+Memory management is the process of allocating and deallocating the memory based on the functions that are being executed.
+
+![alt text](image-30.png)
+
+![alt text](image-31.png)
+
+In the above example, the memory leak happens since the memory is not deallocated after the function execution is finished.
+
+![alt text](image-32.png)
+
+### The Rust way
+
+![alt text](image-33.png)
+
+![alt text](image-34.png)
+
+![alt text](image-35.png)
+
+Rust handles the cleaning up of the heap by itself when the stack frame of a function is cleared.
+
+> In Rust, a value can't exist on the heap if it doesn't have a reference on the stack.
+
+## Ownership
+
+### Ownership rules
+
+- **Each value in rust has an owner.** (Each data on the heap has an owner on the stack.)
+- **There can only be one owner at a time.** (Solves the ```double free error``` where same heap address is tried to be deallocated twice.)
+- **When the owner goes out of scope, the value will be dropped.**
+
+The job of a garbage collector is to figure out what to clean up in the memory from time to time by often interrupting the control flow (like in javascript).
+
+Hence this constraint is not present in ```Rust```, its comparatively faster than js.
+
+## Moving
+
+![alt text](image-36.png)
+
+![alt text](image-37.png)
+
+When the the existing value of a variable a1 is reassigned to new variable a2,
+
+Neither a new copy is created in the heap, nor both the identifier reference the same address.
+
+![alt text](image-39.png)
+
+**Instead, the ownership of the value shifts to a2 such that a1 becomes invalid and no longer point to the value in the heap.**
+
+![alt text](image-38.png)
+
+![alt text](image-40.png)
+
+The same happens in case of passing the **variable a1** as an argument to a function lets say print_str, in place of a **parameter name a2**.
+
+![alt text](image-41.png)
+
+To solve this issue, the value needs to be reassigned or returned to the original variable.
+
+![alt text](image-42.png)
+
+## Borrowing
+
+![alt text](image-43.png)
+
+hence, to prevent this ugly way of returning values to avoid ownership invalidation, we can use the concept of ```borrowing``` with the help of ```references```.
+
+![alt text](image-44.png)
+
+![alt text](image-45.png)
+
+![alt text](image-46.png)
+
+![alt text](image-47.png)
+
+### Rules of References
+
+- At any given time, you can have either one mutable reference or any number of immutable references.
+
+- References must always be valid.
+
+![alt text](image-48.png)
+
+![alt text](image-49.png)
