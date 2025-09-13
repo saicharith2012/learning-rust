@@ -432,3 +432,19 @@ The spawned thread can't access the variables declared in the main thread, since
 Hence, we can use the ```move``` keyword to transfer the ownership completely to the spawned thread, thus preventing the possibility of a dangling pointer. Hence, it can't be used in the main thread again.
 
 ![alt text](image-117.png)
+
+## Message passing between threads
+
+![alt text](image-118.png)
+
+![alt text](image-119.png)
+
+![alt text](image-120.png)
+
+![alt text](image-121.png)
+
+> ```unwrap()``` method is generally used for function results, always expecting ```Ok``` and if the result is an error, it just simply makes the program panic and stop execution. It is **generally not advised to use unwrap() in codebases**. Its always the best to do ```pattern matching```.
+
+![alt text](image-122.png)
+
+![alt text](image-123.png)
