@@ -349,3 +349,58 @@ To solve this we use ```generics```.
 Since, the parameter can also have multiple trait bounds, even if one trait missed on the parameter, it can't be accepted as an argument.
 
 ![alt text](image-92.png)
+
+## Lifetimes
+
+![alt text](image-93.png)
+
+![alt text](image-94.png)
+
+![alt text](image-95.png)
+
+Passing references leads to ```dangling pointers``` when one of the strings goes out of the scope and is removed from the heap. (lifetime of one of the variables expires.)
+
+Hence, Rust compiler warns beforehand that the lifetime of return value is not specified, since the lifetimes of the two variables are different and it is unknown which would be removed from the heap .i.e if they live long enough while being pointed by the return value.
+
+![alt text](image-96.png)
+
+![alt text](image-97.png)
+
+![alt text](image-98.png)
+
+### Fixing the error using Generic Lifetime Annotation
+
+Different values have different lifetimes.
+
+Use ```Generic Lifetime annotations``` to communicate the relation b/w ```lifetimes``` of the ```input arguments``` and ```output arguments``` to the rust compiler. In this case, with ```same annotations``` for all the variables, **the lifetime of the return value would be the ```intersection``` of lifetimes of both the arguments** i.e. the return value would be valid until both the arguments are valid.
+
+Thus, with these annotations, rust identifies that the return value doesn't have lifetime long enough to be access afterwards. Hence, throws an error.
+
+Therefore, we can say that
+> Generic Lifetime annotations are declared to establish a relationship b/w the lifetimes of the variables such that it enables Rust to identify if the references become invalid at some point (which leads to dangling pointers) and throw an error in such cases.
+
+![alt text](image-99.png)
+
+![alt text](image-100.png)
+
+![alt text](image-101.png)
+
+![alt text](image-102.png)
+
+## Struct with lifetimes
+
+![alt text](image-103.png)
+
+![alt text](image-104.png)
+
+Here, We are passing a ```string reference``` as a value to one of struct properties instead of a ```String```.
+
+> Hence, there should be a relationship b/w the lifetimes of the struct instance and the string reference, so that the compiler knows if the original string goes out of scope and whether the struct would become invalid.
+
+Therefore, ````Generic lifetime annotations```` are used to relate the lifetimes of struct and string reference, such that struct lives only until the string reference lives.
+
+![alt text](image-105.png)
+
+![alt text](image-106.png)
+
+![alt text](image-107.png)
