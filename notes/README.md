@@ -323,3 +323,29 @@ To solve this we use ```generics```.
 ![alt text](image-84.png)
 
 > ```std::cmp::PartialOrd``` restricts values other than those that are comparable from being passed as arguments into the function.
+
+## Traits
+
+![alt text](image-85.png)
+
+![alt text](image-86.png)
+
+> Generally, the trait is defined with function signatures inside it. But, it can also be defined with default implementation, which can be used when the type that implements the trait doesn't have its own implementation.
+
+### Default Implementations
+
+![alt text](image-87.png)
+
+### Traits as Parameters
+
+![alt text](image-88.png)
+
+![alt text](image-89.png)
+
+![alt text](image-90.png)
+
+![alt text](image-91.png)
+
+Since, the parameter can also have multiple trait bounds, even if one trait missed on the parameter, it can't be accepted as an argument.
+
+![alt text](image-92.png)
