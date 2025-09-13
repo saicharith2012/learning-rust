@@ -267,3 +267,47 @@ Iterating directly on the collection with a for loop is same as using ```into_it
 ![alt text](image-68.png)
 
 ![alt text](image-69.png)
+
+## Strings vs slices
+
+![alt text](image-70.png)
+
+### Creating a string
+
+![alt text](image-71.png)
+
+### Mutating a string
+
+![alt text](image-72.png)
+
+### Deleting from a string
+
+![alt text](image-73.png)
+
+#### How string looks like in memory
+
+![alt text](image-74.png)
+
+> Slice doesn't have the ownership
+
+![alt text](image-75.png)
+
+![alt text](image-76.png)
+
+![alt text](image-77.png)
+
+![alt text](image-78.png)
+
+![alt text](image-79.png)
+
+![alt text](image-80.png)
+
+#### String literal
+
+The string literal is literally hard coded in the binary of the rust code.
+
+The string literal is of type ```&str``` and it literally points to that literal in the binary.
+
+![alt text](image-81.png)
+
+![alt text](image-82.png)
