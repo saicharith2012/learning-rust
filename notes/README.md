@@ -404,3 +404,31 @@ Therefore, ````Generic lifetime annotations```` are used to relate the lifetimes
 ![alt text](image-106.png)
 
 ![alt text](image-107.png)
+
+## Multithreading
+
+![alt text](image-108.png)
+
+![alt text](image-109.png)
+
+![alt text](image-110.png)
+
+![alt text](image-111.png)
+
+![alt text](image-112.png)
+
+![alt text](image-113.png)
+
+![alt text](image-114.png)
+
+### 'move' keyword in threads
+
+![alt text](image-115.png)
+
+![alt text](image-116.png)
+
+The spawned thread can't access the variables declared in the main thread, since the main thread could end before that spawned thread, removing the variable from the heap, thus possibly leaving a dangling pointer.
+
+Hence, we can use the ```move``` keyword to transfer the ownership completely to the spawned thread, thus preventing the possibility of a dangling pointer. Hence, it can't be used in the main thread again.
+
+![alt text](image-117.png)
