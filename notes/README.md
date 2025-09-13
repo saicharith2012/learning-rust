@@ -311,3 +311,15 @@ The string literal is of type ```&str``` and it literally points to that literal
 ![alt text](image-81.png)
 
 ![alt text](image-82.png)
+
+## Generics
+
+![alt text](image-83.png)
+
+The main problem in the above code snippet is the ```redundancy```.
+
+To solve this we use ```generics```.
+
+![alt text](image-84.png)
+
+> ```std::cmp::PartialOrd``` restricts values other than those that are comparable from being passed as arguments into the function.
