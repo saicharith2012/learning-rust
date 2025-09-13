@@ -2,115 +2,115 @@
 
 ## Initializing a project locally
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ## Variables, Conditionals, Loops and Functions
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 ## Structs
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 ## Enums
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 ## Pattern Matching
 
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 ## Option Enum
 
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 ## Result Enum
 
-![alt text](image-13.png)
+![alt text](images/image-13.png)
 
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 ## Package Management in Rust
 
-![alt text](image-15.png)
+![alt text](images/image-15.png)
 
 ## Memory Management in Rust
 
-![alt text](image-16.png)
+![alt text](images/image-16.png)
 
-![alt text](image-17.png)
+![alt text](images/image-17.png)
 
 When a program runs it is reserved some static memory and during the execution it also keeps asking for some dynamic memory.
 
-![alt text](image-18.png)
+![alt text](images/image-18.png)
 
 ## Heap vs Stack
 
 The ```static size``` variables that are identified during compile time are stored inside a ```stack```.
 
-![alt text](image-19.png)
+![alt text](images/image-19.png)
 
 When a function runs, its ```stack frame``` is pushed into the stack and is popped off when its execution gets completed and the memory is freed.
 
-![alt text](image-20.png)
+![alt text](images/image-20.png)
 
-![alt text](image-21.png)
+![alt text](images/image-21.png)
 
 The ```variables whose size could be changed``` during runtime are stored in the ```heap```.
 
-![alt text](image-22.png)
+![alt text](images/image-22.png)
 
-![alt text](image-23.png)
+![alt text](images/image-23.png)
 
-![alt text](image-24.png)
+![alt text](images/image-24.png)
 
-![alt text](image-25.png)
+![alt text](images/image-25.png)
 
 > For all the dynamic sized data that's stored on the heap, the corresponding metadata like identifiers (whose size doesn't change) is stored on the stack along the with a ```pointer``` to the data in the heap.
 
-![alt text](image-26.png)
+![alt text](images/image-26.png)
 
 ## Mutability
 
-![alt text](image-27.png)
+![alt text](images/image-27.png)
 
-![alt text](image-29.png)
+![alt text](images/image-29.png)
 
-![alt text](image-28.png)
+![alt text](images/image-28.png)
 
 ## Ways of memory management in different languages
 
 Memory management is the process of allocating and deallocating the memory based on the functions that are being executed.
 
-![alt text](image-30.png)
+![alt text](images/image-30.png)
 
-![alt text](image-31.png)
+![alt text](images/image-31.png)
 
 In the above example, the memory leak happens since the memory is not deallocated after the function execution is finished.
 
-![alt text](image-32.png)
+![alt text](images/image-32.png)
 
 ### The Rust way
 
-![alt text](image-33.png)
+![alt text](images/image-33.png)
 
-![alt text](image-34.png)
+![alt text](images/image-34.png)
 
-![alt text](image-35.png)
+![alt text](images/image-35.png)
 
 Rust handles the cleaning up of the heap by itself when the stack frame of a function is cleared.
 
@@ -130,43 +130,43 @@ Hence this constraint is not present in ```Rust```, its comparatively faster tha
 
 ## Moving
 
-![alt text](image-36.png)
+![alt text](images/image-36.png)
 
-![alt text](image-37.png)
+![alt text](images/image-37.png)
 
 When the the existing value of a variable a1 is reassigned to new variable a2,
 
 Neither a new copy is created in the heap, nor both the identifier reference the same address.
 
-![alt text](image-39.png)
+![alt text](images/image-39.png)
 
 **Instead, the ownership of the value shifts to a2 such that a1 becomes invalid and no longer point to the value in the heap.**
 
-![alt text](image-38.png)
+![alt text](images/image-38.png)
 
-![alt text](image-40.png)
+![alt text](images/image-40.png)
 
 The same happens in case of passing the **variable a1** as an argument to a function lets say print_str, in place of a **parameter name a2**.
 
-![alt text](image-41.png)
+![alt text](images/image-41.png)
 
 To solve this issue, the value needs to be reassigned or returned to the original variable.
 
-![alt text](image-42.png)
+![alt text](images/image-42.png)
 
 ## Borrowing
 
-![alt text](image-43.png)
+![alt text](images/image-43.png)
 
 hence, to prevent this ugly way of returning values to avoid ownership invalidation, we can use the concept of ```borrowing``` with the help of ```references```.
 
-![alt text](image-44.png)
+![alt text](images/image-44.png)
 
-![alt text](image-45.png)
+![alt text](images/image-45.png)
 
-![alt text](image-46.png)
+![alt text](images/image-46.png)
 
-![alt text](image-47.png)
+![alt text](images/image-47.png)
 
 ### Rules of References
 
@@ -174,17 +174,17 @@ hence, to prevent this ugly way of returning values to avoid ownership invalidat
 
 - References must always be valid.
 
-![alt text](image-48.png)
+![alt text](images/image-48.png)
 
-![alt text](image-49.png)
+![alt text](images/image-49.png)
 
 ## Collections
 
-![alt text](image-50.png)
+![alt text](images/image-50.png)
 
 ## Vectors
 
-![alt text](image-51.png)
+![alt text](images/image-51.png)
 
 ### Iterating through a vector using for loop
 
@@ -198,27 +198,27 @@ for val in vec {
 
 ### Initialising Vectors using macros
 
-![alt text](image-52.png)
+![alt text](images/image-52.png)
 
 ### Defining the type of the vector as generic
 
 ## Hashmap
 
-![alt text](image-53.png)
+![alt text](images/image-53.png)
 
-![alt text](image-54.png)
+![alt text](images/image-54.png)
 
 ## Iterators
 
-![alt text](image-55.png)
+![alt text](images/image-55.png)
 
 ### Iterating using for loops
 
-![alt text](image-56.png)
+![alt text](images/image-56.png)
 
 ### Iterating after creating an iterator
 
-![alt text](image-57.png)
+![alt text](images/image-57.png)
 
 > Iterator borrows the values with ```immutable references```, hence the original vector ```nums``` still owns these values.
 
@@ -226,81 +226,81 @@ for val in vec {
 
 ```iter_mut()``` can be used to make ```mutable references``` to the original collection with the iterator.
 
-![alt text](image-58.png)
+![alt text](images/image-58.png)
 
 ### Iterating using .next
 
-![alt text](image-59.png)
+![alt text](images/image-59.png)
 
 ### into_iter()
 
-![alt text](image-60.png)
+![alt text](images/image-60.png)
 
-![alt text](image-61.png)
+![alt text](images/image-61.png)
 
 ### Which Iterator to choose?
 
-![alt text](image-62.png)
+![alt text](images/image-62.png)
 
 Iterating directly on the collection with a for loop is same as using ```into_iter```, hence ownership is tranferred in both the cases.
 
-![alt text](image-63.png)
+![alt text](images/image-63.png)
 
 ### Types of Iterators
 
 #### Consuming Adapters
 
-![alt text](image-64.png)
+![alt text](images/image-64.png)
 
 #### Iterator Adapters
 
-![alt text](image-65.png)
+![alt text](images/image-65.png)
 
 - Map
 
-![alt text](image-66.png)
+![alt text](images/image-66.png)
 
 - Filter
 
-![alt text](image-67.png)
+![alt text](images/image-67.png)
 
-![alt text](image-68.png)
+![alt text](images/image-68.png)
 
-![alt text](image-69.png)
+![alt text](images/image-69.png)
 
 ## Strings vs slices
 
-![alt text](image-70.png)
+![alt text](images/image-70.png)
 
 ### Creating a string
 
-![alt text](image-71.png)
+![alt text](images/image-71.png)
 
 ### Mutating a string
 
-![alt text](image-72.png)
+![alt text](images/image-72.png)
 
 ### Deleting from a string
 
-![alt text](image-73.png)
+![alt text](images/image-73.png)
 
 #### How string looks like in memory
 
-![alt text](image-74.png)
+![alt text](images/image-74.png)
 
 > Slice doesn't have the ownership
 
-![alt text](image-75.png)
+![alt text](images/image-75.png)
 
-![alt text](image-76.png)
+![alt text](images/image-76.png)
 
-![alt text](image-77.png)
+![alt text](images/image-77.png)
 
-![alt text](image-78.png)
+![alt text](images/image-78.png)
 
-![alt text](image-79.png)
+![alt text](images/image-79.png)
 
-![alt text](image-80.png)
+![alt text](images/image-80.png)
 
 #### String literal
 
@@ -308,65 +308,65 @@ The string literal is literally hard coded in the binary of the rust code.
 
 The string literal is of type ```&str``` and it literally points to that literal in the binary.
 
-![alt text](image-81.png)
+![alt text](images/image-81.png)
 
-![alt text](image-82.png)
+![alt text](images/image-82.png)
 
 ## Generics
 
-![alt text](image-83.png)
+![alt text](images/image-83.png)
 
 The main problem in the above code snippet is the ```redundancy```.
 
 To solve this we use ```generics```.
 
-![alt text](image-84.png)
+![alt text](images/image-84.png)
 
 > ```std::cmp::PartialOrd``` restricts values other than those that are comparable from being passed as arguments into the function.
 
 ## Traits
 
-![alt text](image-85.png)
+![alt text](images/image-85.png)
 
-![alt text](image-86.png)
+![alt text](images/image-86.png)
 
 > Generally, the trait is defined with function signatures inside it. But, it can also be defined with default implementation, which can be used when the type that implements the trait doesn't have its own implementation.
 
 ### Default Implementations
 
-![alt text](image-87.png)
+![alt text](images/image-87.png)
 
 ### Traits as Parameters
 
-![alt text](image-88.png)
+![alt text](images/image-88.png)
 
-![alt text](image-89.png)
+![alt text](images/image-89.png)
 
-![alt text](image-90.png)
+![alt text](images/image-90.png)
 
-![alt text](image-91.png)
+![alt text](images/image-91.png)
 
 Since, the parameter can also have multiple trait bounds, even if one trait missed on the parameter, it can't be accepted as an argument.
 
-![alt text](image-92.png)
+![alt text](images/image-92.png)
 
 ## Lifetimes
 
-![alt text](image-93.png)
+![alt text](images/image-93.png)
 
-![alt text](image-94.png)
+![alt text](images/image-94.png)
 
-![alt text](image-95.png)
+![alt text](images/image-95.png)
 
 Passing references leads to ```dangling pointers``` when one of the strings goes out of the scope and is removed from the heap. (lifetime of one of the variables expires.)
 
 Hence, Rust compiler warns beforehand that the lifetime of return value is not specified, since the lifetimes of the two variables are different and it is unknown which would be removed from the heap .i.e if they live long enough while being pointed by the return value.
 
-![alt text](image-96.png)
+![alt text](images/image-96.png)
 
-![alt text](image-97.png)
+![alt text](images/image-97.png)
 
-![alt text](image-98.png)
+![alt text](images/image-98.png)
 
 ### Fixing the error using Generic Lifetime Annotation
 
@@ -379,19 +379,19 @@ Thus, with these annotations, rust identifies that the return value doesn't have
 Therefore, we can say that
 > Generic Lifetime annotations are declared to establish a relationship b/w the lifetimes of the variables such that it enables Rust to identify if the references become invalid at some point (which leads to dangling pointers) and throw an error in such cases.
 
-![alt text](image-99.png)
+![alt text](images/image-99.png)
 
-![alt text](image-100.png)
+![alt text](images/image-100.png)
 
-![alt text](image-101.png)
+![alt text](images/image-101.png)
 
-![alt text](image-102.png)
+![alt text](images/image-102.png)
 
 ## Struct with lifetimes
 
-![alt text](image-103.png)
+![alt text](images/image-103.png)
 
-![alt text](image-104.png)
+![alt text](images/image-104.png)
 
 Here, We are passing a ```string reference``` as a value to one of struct properties instead of a ```String```.
 
@@ -399,52 +399,52 @@ Here, We are passing a ```string reference``` as a value to one of struct proper
 
 Therefore, ````Generic lifetime annotations```` are used to relate the lifetimes of struct and string reference, such that struct lives only until the string reference lives.
 
-![alt text](image-105.png)
+![alt text](images/image-105.png)
 
-![alt text](image-106.png)
+![alt text](images/image-106.png)
 
-![alt text](image-107.png)
+![alt text](images/image-107.png)
 
 ## Multithreading
 
-![alt text](image-108.png)
+![alt text](images/image-108.png)
 
-![alt text](image-109.png)
+![alt text](images/image-109.png)
 
-![alt text](image-110.png)
+![alt text](images/image-110.png)
 
-![alt text](image-111.png)
+![alt text](images/image-111.png)
 
-![alt text](image-112.png)
+![alt text](images/image-112.png)
 
-![alt text](image-113.png)
+![alt text](images/image-113.png)
 
-![alt text](image-114.png)
+![alt text](images/image-114.png)
 
 ### 'move' keyword in threads
 
-![alt text](image-115.png)
+![alt text](images/image-115.png)
 
-![alt text](image-116.png)
+![alt text](images/image-116.png)
 
 The spawned thread can't access the variables declared in the main thread, since the main thread could end before that spawned thread, removing the variable from the heap, thus possibly leaving a dangling pointer.
 
 Hence, we can use the ```move``` keyword to transfer the ownership completely to the spawned thread, thus preventing the possibility of a dangling pointer. Hence, it can't be used in the main thread again.
 
-![alt text](image-117.png)
+![alt text](images/image-117.png)
 
 ## Message passing between threads
 
-![alt text](image-118.png)
+![alt text](images/image-118.png)
 
-![alt text](image-119.png)
+![alt text](images/image-119.png)
 
-![alt text](image-120.png)
+![alt text](images/image-120.png)
 
-![alt text](image-121.png)
+![alt text](images/image-121.png)
 
 > ```unwrap()``` method is generally used for function results, always expecting ```Ok``` and if the result is an error, it just simply makes the program panic and stop execution. It is **generally not advised to use unwrap() in codebases**. Its always the best to do ```pattern matching```.
 
-![alt text](image-122.png)
+![alt text](images/image-122.png)
 
-![alt text](image-123.png)
+![alt text](images/image-123.png)
